@@ -3,6 +3,29 @@ import styles from "./Contact.module.css";
 import { getImageUrl } from "../../common/utlis";
 
 const Contact = () => {
+  const data = [
+    {
+      id: 1,
+      url: "mailto:rishavyudi.dev@gmail.com",
+      imgUrl: "contact/emailIcon.png",
+      altIcon: "Email icon",
+      text: "Mail",
+    },
+    {
+      id: 2,
+      url: "https://www.linkedin.com/in/rishav-kumar-b190451ab/",
+      imgUrl: "contact/linkedinIcon.png",
+      altIcon: "Linkedln icon",
+      text: " Linkedln",
+    },
+    {
+      id: 3,
+      url: "https://github.com/rishavyudidev",
+      imgUrl: "contact/githubIcon.png",
+      altIcon: "GitHub icon",
+      text: "GitHub",
+    },
+  ];
   return (
     <footer id="contact" className={styles.container}>
       <div className={styles.text}>
@@ -10,21 +33,16 @@ const Contact = () => {
         <p>Feel free to reach out!</p>
       </div>
       <ul className={styles.links}>
-        <li className={styles.link}>
-          <img src={getImageUrl("contact/emailIcon.png")} alt="Email icon" />
-          <a href="mailto:myemail@email.com">myemail@email.com</a>
-        </li>
-        <li className={styles.link}>
-          <img
-            src={getImageUrl("contact/linkedinIcon.png")}
-            alt="LinkedIn icon"
-          />
-          <a href="https://www.linkedin.com/myname">linkedin.com/myname</a>
-        </li>
-        <li className={styles.link}>
-          <img src={getImageUrl("contact/githubIcon.png")} alt="Github icon" />
-          <a href="https://www.github.com/myname">github.com/myname</a>
-        </li>
+        {data?.map((item) => {
+          return (
+            <li className={styles.link}>
+              <img src={getImageUrl(item.imgUrl)} alt={item.altIcon} />
+              <a href={item.url} target="_blank">
+                {item.text}
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </footer>
   );

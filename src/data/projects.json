@@ -1,8 +1,8 @@
 [
   {
-    "title": "Project A",
+    "title": "Amazon Clone",
     "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
+    "description": "A shopping app featuring product listings, shopping cart, and secure checkout.",
     "skills": ["React", "Express", "Node"],
     "demo": "https://www.example.com",
     "source": "https://www.github.com"
